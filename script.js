@@ -4,13 +4,11 @@ const mainImage = document.getElementById('main-image');
 
 thumbnails.forEach((thumb, index) => {
   thumb.addEventListener('click', () => {
-    mainImage.src = thumb.src.replace('thumb', 'image-product');
-    thumbnails.forEach(t => t.classList.remove('active'));
-    thumb.classList.add('active');
+    currentImageIndex = index; 
+    updateCarousel();
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
   let quantity = 0;
   const plusBtn = document.querySelector('.plus');
   const minusBtn = document.querySelector('.minus');
@@ -72,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
       cartDropdown.classList.add('hidden');
     }
   };
-});
 
 const hamburger = document.querySelector('.hamburger');
 const navLinksContainer = document.querySelector('.nav-links');
@@ -92,14 +89,21 @@ let currentImageIndex = 0;
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 
+function updateCarousel() {
+  mainImage.src = imageList[currentImageIndex];
+  document.querySelectorAll('.thumbnail').forEach((t, i) => {
+    t.classList.toggle('active', i === currentImageIndex);
+  });
+}
+
 prevBtn.addEventListener("click", () => {
   currentImageIndex = (currentImageIndex - 1 + imageList.length) % imageList.length;
-  mainImage.src = imageList[currentImageIndex];
+  updateCarousel();
 });
 
 nextBtn.addEventListener("click", () => {
   currentImageIndex = (currentImageIndex + 1) % imageList.length;
-  mainImage.src = imageList[currentImageIndex];
+  updateCarousel();
 });
 
 
