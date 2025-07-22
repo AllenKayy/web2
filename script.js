@@ -10,18 +10,6 @@ thumbnails.forEach((thumb, index) => {
   });
 });
 
-
-let quantity = 0;
-const quantityDisplay = document.querySelector('.quantity');
-document.querySelector('.plus').onclick = () => {
-  quantity++;
-  quantityDisplay.textContent = quantity;
-};
-document.querySelector('.minus').onclick = () => {
-  if (quantity > 0) quantity--;
-  quantityDisplay.textContent = quantity;
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   let quantity = 0;
   const plusBtn = document.querySelector('.plus');
