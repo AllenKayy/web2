@@ -75,10 +75,7 @@ body {
   height: 40px;
   border-radius: 50%;
 }
-.prev-btn,
-.next-btn {
-  display: none;
-}
+
 .product-container {
   display: flex;
   gap: 2rem;
@@ -358,7 +355,7 @@ body {
     border-radius: 10px;
     margin-top: 1rem;
   }
-
+}
  @media (max-width: 768px) {
   .navbar {
     position: relative;
@@ -416,7 +413,7 @@ body {
 
   .prev-btn,
   .next-btn {
-    position: absolute;
+    position: block;
     top: 50%;
     transform: translateY(-50%);
     background-color: white;
@@ -437,6 +434,5 @@ body {
   .next-btn {
     right: 1rem;
   }
-}
 }
 
