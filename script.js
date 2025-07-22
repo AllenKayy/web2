@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+const navLinksContainer = document.querySelector('.nav-links');
 
 hamburger.onclick = () => {
-  navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+  navLinksContainer.style.display = navLinksContainer.style.display === 'block' ? 'none' : 'block';
 };
 
 const imageList = [
@@ -126,10 +126,10 @@ const contentMap = {
   `
 };
 
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinksItems = document.querySelectorAll('.nav-links a');
 const pageContent = document.getElementById('page-content');
 
-navLinks.forEach(link => {
+navLinksItems.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
     const page = link.getAttribute('data-page');
