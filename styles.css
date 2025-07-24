@@ -108,7 +108,7 @@ body {
   opacity: 0.5;
 }
 
-.cart-count {
+#cart-count {
   position: absolute;
   top: -8px;
   right: -8px;
